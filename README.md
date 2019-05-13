@@ -304,11 +304,13 @@ For j = 1 To h - 2
 |PDL|PD|PDR|
 ##### So P is the pixel we're reading right now and PU is the one on the top of it, PD is the one down of it and so on
 ##### If we want to find the left top corner of a square our table should look like this
+|left|middle|right|
+| ------------- |:-------------:| -----:|
 |PUL|PU|PUR|
 |PL|P(Red colour)|PR(Red colour)|
 |PDL|PD(Red colour)|PDR(Red colour)|
 ##### We depend on this table in our code to find the location of the corner 
-|Tables| Are|Cool|
+|left|middle|right|
 | ------------- |:-------------:| -----:|
 |X-1,Y-1|X,Y-1|X+1,Y-1|
 |X-1,Y|X,Y|X+1,Y|
