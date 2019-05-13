@@ -2,7 +2,7 @@
 ___
 ![alt text](http://i67.tinypic.com/2lq0xx.jpg "Logo Title Text 1")
 ___
-#### The coding process of how the lines and the dots are made
+#### The encoding process of how the lines and the dots are made
 ##### Quadratic shape algorithm
 ```
 Sub Drowsquare(X As Integer, Y As Integer)
@@ -277,3 +277,10 @@ If Pattren = 1 Then
                     End Select
 ```
 ##### If the number equals 1, draw 3 rectangles and then two squares. If the number equals 2, draw a rectangle, then a square, then a rectangle, then a square, then a rectangle, and so on for the rest of the numbers in the first pattern. If the pattern changes, the shapes will change for the number
+___
+#### The dncoding process of how the lines and the dots are decoded
+##### All we need to do it to determine where the code is, and that can be done by easily by giving the pattern a colour, in this case it is red. The algorithim will change every other colour to black and leave only the red colour.
+![alt text](http://i68.tinypic.com/2ccw0i.jpg "Logo Title Text 1")
+```
+
+```
