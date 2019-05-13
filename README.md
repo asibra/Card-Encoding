@@ -308,6 +308,8 @@ For j = 1 To h - 2
 |PL|P(Red colour)|PR(Red colour)|
 |PDL|PD(Red colour)|PDR(Red colour)|
 ##### We depend on this table in our code to find the location of the corner 
+|Tables| Are|Cool|
+| ------------- |:-------------:| -----:|
 |X-1,Y-1|X,Y-1|X+1,Y-1|
 |X-1,Y|X,Y|X+1,Y|
 |X-1,Y|X,Y+1|X+1,Y+1|
