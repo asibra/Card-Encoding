@@ -279,8 +279,111 @@ If Pattren = 1 Then
 ##### If the number equals 1, draw 3 rectangles and then two squares. If the number equals 2, draw a rectangle, then a square, then a rectangle, then a square, then a rectangle, and so on for the rest of the numbers in the first pattern. If the pattern changes, the shapes will change for the number
 ___
 #### The dncoding process of how the lines and the dots are decoded
-##### All we need to do it to determine where the code is, and that can be done by easily by giving the pattern a colour, in this case it is red. The algorithim will change every other colour to black and leave only the red colour.
+##### All we need to do it to determine where the code is, and that can be done by easily by giving the pattern a colour, in this case it is red. It can be done in two steps.
+##### First the algorithim will change every other colour to black and leave only the red colour.
 ![alt text](http://i68.tinypic.com/2ccw0i.jpg "Logo Title Text 1")
+##### And to easily check we use this code
 ```
+For j = 1 To h - 2
+                For i = 1 To w - 2
+                    Red = img.GetPixel(i, j).R : Blue = img.GetPixel(i, j).B : Green = img.GetPixel(i, j).G
 
+                    If Red > 200 And Green < 50 And Blue < 50 Then
+                        img.SetPixel(i, j, Color.FromArgb(Red, Green, Blue))
+                    Else
+                        img.SetPixel(i, j, Color.FromArgb(0, 0, 0))
+                    End If
+                Next
+            Next
+```
+##### Second the algorthim of capturing the corners of each rectangle and square
+##### We have to read every pixel in the picture to determine if the if it's black or read, if the given data is 0 then it's black, if the given data is 1 then it's red
+##### For example if our pixel is called P then all the other pixels around it will look something like this
+|PUL|PU|PUR|
+|PL|P(Red colour)|PR|
+|PDL|PD|PDR|
+##### So P is the pixel we're reading right now and PU is the one on the top of it, PD is the one down of it and so on
+##### If we want to find the left top corner of a square our table should look like this
+|PUL|PU|PUR|
+|PL|P(Red colour)|PR(Red colour)|
+|PDL|PD(Red colour)|PDR(Red colour)|
+##### We depend on this table in our code to find the location of the corner 
+|X-1,Y-1|X,Y-1|X+1,Y-1|
+|X-1,Y|X,Y|X+1,Y|
+|X-1,Y|X,Y+1|X+1,Y+1|
+```
+If leftP = 0 And upP = 0 And lupP = 0 And rupP = 0 Then
+                            sh(c).X = i
+                            sh(c).Y = j
+                            c += 1
+
+                        End If
+
+
+                        If rightP = 0 And downP = 0 And rdownP = 0 And ldownP = 0 Then
+                            sh(d).X1 = i
+                            sh(d).Y1 = j
+                            d += 1
+                        End If
+```
+##### And the same goes for all other corners
+##### After we find the shape of each pattern we can then translate it into a number and we can use this code to find the orignal ID in our database
+```
+Function DecodePattern(CodeToStr As String) As String
+        Select Case CodeToStr
+            Case "10011"
+                DecodePattern = "1"
+            Case "01110"
+                DecodePattern = "2"
+        End Select
+        Return DecodePattern
+    End Function
+    Function DecodeType2(CodeToStr As String) As String
+        Select Case CodeToStr
+            Case "10100"
+                DecodeType2 = "1"
+            Case "00111"
+                DecodeType2 = "2"
+            Case "11001"
+                DecodeType2 = "3"
+            Case "11110"
+                DecodeType2 = "4"
+            Case "01011"
+                DecodeType2 = "5"
+            Case "00001"
+                DecodeType2 = "6"
+            Case "10110"
+                DecodeType2 = "7"
+            Case "10101"
+                DecodeType2 = "8"
+            Case "11111"
+                DecodeType2 = "9"
+            Case "01101"
+                DecodeType2 = "0"
+        End Select
+    End Function
+    Function DecodeType1(CodeToStr As String) As String
+        Select Case CodeToStr
+            Case "00011"
+                DecodeType1 = "1"
+            Case "01010"
+                DecodeType1 = "2"
+            Case "10111"
+                DecodeType1 = "3"
+            Case "10010"
+                DecodeType1 = "4"
+            Case "11100"
+                DecodeType1 = "5"
+            Case "00110"
+                DecodeType1 = "6"
+            Case "11010"
+                DecodeType1 = "7"
+            Case "00101"
+                DecodeType1 = "8"
+            Case "11101"
+                DecodeType1 = "9"
+            Case "00010"
+                DecodeType1 = "0"
+        End Select
+    End Function
 ```
