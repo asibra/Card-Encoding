@@ -1,0 +1,373 @@
+﻿<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{08A9C5BC-3CAC-4526-8641-72F89AB1EA52}</ProjectGuid>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WpfApp2</RootNamespace>
+    <AssemblyName>WpfApp2</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <IncrementalBuild>true</IncrementalBuild>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>WpfApp2.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42314</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <IncrementalBuild>false</IncrementalBuild>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>WpfApp2.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42314</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="Application.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Application.xaml.vb">
+      <DependentUpon>Application.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.vb">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="System.Threading.Tasks" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows" />
+    <Import Include="System.Windows.Controls" />
+    <Import Include="System.Windows.Data" />
+    <Import Include="System.Windows.Documents" />
+    <Import Include="System.Windows.Input" />
+    <Import Include="System.Windows.Shapes" />
+    <Import Include="System.Windows.Media" />
+    <Import Include="System.Windows.Media.Imaging" />
+    <Import Include="System.Windows.Navigation" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="My Project\AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWpfExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.WPF.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <None Include="Design\projectGuides.guides" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="17879.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="f1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 55.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 111.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 101.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 121.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 70.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 90.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 1000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 120.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Untitled-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Untitled-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="formPic21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="22copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="23copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="generate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="generate2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled-22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="rounded rectangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="form3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 700.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="bacground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="bacground2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 500.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 1111.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 5 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="20170805_225037738_iOS.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pic1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Asset 2222.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Capture.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="crtbtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="CreateBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Createtxt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Createtxt2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Createtxt3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Savetxt2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Opentxt2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Opentxt3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ScanBtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Scantxt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="blank-profile-picture-973460_640.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="5604653_200x130.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons8-add-image-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5604653_200x130.gif" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
