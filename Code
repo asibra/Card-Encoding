@@ -1,4 +1,3 @@
-```
 Imports System.Data.OleDb
 Imports System.Drawing
 Imports System.Data
@@ -682,4 +681,3 @@ don't forget to fill all fields")
     End Sub
 
 End Class
-```
